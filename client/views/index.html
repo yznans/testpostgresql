@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="nodeTodo">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="manifest.webmanifest"> 
+        <link rel="apple-touch-icon" href="icon.png">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
+    </head>
+   <body ng-controller="mainController">
+    <div class="container">
+      <div class="header">
+        <h1>Inuheat </h1>
+        <hr>
+      </div>
+      <div class="todo-form">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control input-lg" placeholder="Enter text" ng-model="formData.text">
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="createTodo()">Add Item</button>
+        </form>
+      </div>
+      <br>
+      <div class="todo-list">
+        <ul ng-repeat="todo in todoData">
+          <li><input class="lead" type="checkbox" ng-click="deleteTodo(todo.id)">&nbsp;<b>Name: </b>{{ todo.text }} <b>Status:</b> {{todo.complete}}</li><hr>
+        </ul>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="javascripts/app.js"></script>
+    </body>
+</html>
